@@ -64,7 +64,6 @@ const Vis = plug('RawRadialHeatmap', function(){
             'stroke': { 'value': '#FA7F9F' },
             'strokeWidth': {'value': strokeWidth},
             'fill': {'value': null},
-
             'size': {'scale': 'r', 'field': 'distance'}
           }
         }
@@ -81,7 +80,6 @@ export default React.createClass({
     highlightedPoint: PropTypes.object
   },
   handleHover(signal, datum){
-    console.log('arguments2', arguments);
     const { onHighlight } = this.props;
     if (onHighlight) {
       onHighlight(datum);
@@ -97,84 +95,3 @@ export default React.createClass({
     );
   }
 });
-
-// class RadialHeatmap extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       vis: null
-//     };
-
-//     // use PureRenderMixin to limit updates when they are not necessary
-//     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-
-//     this._handleHover = this._handleHover.bind(this);
-//   }
-
-//   // On initial load, generate the initial vis and attach signal listeners
-//   componentDidMount() {
-//     const { data, highlightedPoint } = this.props;
-//     const spec = this._spec();
-
-//     // parse the vega spec and create the vis
-//     vg.parse.spec(spec, chart => {
-//       const vis = chart({ el: this.refs.chartContainer })
-//         .onSignal('hover', (_, datum) => this._handleHover(datum));
-
-//       // set the initial data
-//       vis.data('points').insert(data);
-
-//       // set the initial highlighted point if available
-//       if (highlightedPoint) {
-//         vis.data('highlightedPoint').insert([highlightedPoint]);
-//       }
-
-//       // render the vis
-//       vis.update();
-
-//       // store the vis object in state to be used on later updates
-//       this.setState({ vis });
-//     });
-//   }
-
-//   componentDidUpdate() {
-//     const { vis } = this.state;
-//     const { data, highlightedPoint } = this.props;
-
-//     if (vis) {
-//       // update data in case it changed
-//       vis.data('points').remove(() => true).insert(data);
-
-//       // update the highlighted point in case it changed
-//       vis.data('highlightedPoint').remove(() => true);
-//       if (highlightedPoint) {
-//         vis.data('highlightedPoint').insert([highlightedPoint]); // note the array seems to be required
-//       }
-
-//       vis.update();
-//     }
-//   }
-
-//   // dummy render method that creates the container vega draws inside
-//   render() {
-//     return (
-//       <div ref='chartContainer'></div>
-//     );
-//   }
-
-//   // callback when the hover signal changes
-//   _handleHover(datum) {
-//     const { onHighlight } = this.props;
-//     if (onHighlight) {
-//       onHighlight(datum);
-//     }
-//   }
-// }
-
-// RadialHeatmap.propTypes = {
-//   data: PropTypes.array.isRequired,
-//   onHighlight: PropTypes.func,
-//   highlightedPoint: PropTypes.object
-// };
-
-// export default RadialHeatmap;
