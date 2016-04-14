@@ -9,7 +9,14 @@ function listenerName(signalName){
   return `onSignal${capitalize(signalName)}`;
 }
 
-export function plug(name, spec){
+function isFunction(functionToCheck){
+  var getType = {};
+  return !!functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+}
+
+export function createClassFromSpec(name, spec){
+  spec = isFunction(spec) ? spec() : spec;
+
   let propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,

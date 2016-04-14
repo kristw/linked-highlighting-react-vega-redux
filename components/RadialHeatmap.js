@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {plug} from './react-vega.js';
+import {createClassFromSpec} from './react-vega.js';
 
-const Vis = plug('RawRadialHeatmap', function(){
+const Vis = createClassFromSpec('RawRadialHeatmap', function(){
   const numCircles = 31; // should be determined from data.length, but this is sufficient for now.
-  const width = 450, height = width / 2 + 1, strokeWidth = (width / numCircles) / 2;
+  const width = 450;
+  const height = width / 2 + 1;
+  const strokeWidth = (width / numCircles) / 2;
 
   return {
     'width': width,
@@ -70,7 +72,7 @@ const Vis = plug('RawRadialHeatmap', function(){
       }
     ]
   };
-}());
+});
 
 export default React.createClass({
   displayName: 'RadialHeatmap',
