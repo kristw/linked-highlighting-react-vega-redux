@@ -73,6 +73,7 @@ const Vis = plug('RawRadialHeatmap', function(){
 }());
 
 export default React.createClass({
+  displayName: 'RadialHeatmap',
   mixins: [PureRenderMixin],
   propTypes: {
     data: PropTypes.array.isRequired,

@@ -99,6 +99,7 @@ const Vis = plug('RawLineChart', {
 });
 
 export default React.createClass({
+  displayName: 'LineChart',
   mixins: [PureRenderMixin],
   propTypes: {
     data: PropTypes.array.isRequired,
@@ -119,7 +120,7 @@ export default React.createClass({
       highlightedPoint: [this.props.highlightedPoint]
     };
     return (
-      <Vis data={visData} renderer={'canvas'} onSignalHover={this.handleHover} />
+      <Vis data={visData} renderer={'svg'} onSignalHover={this.handleHover} />
     );
   }
 });
