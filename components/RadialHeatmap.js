@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {createClassFromSpec} from './react-vega.js';
+import {createClassFromSpec} from 'react-vega';
 
 const Vis = createClassFromSpec('RawRadialHeatmap', function(){
   const numCircles = 31; // should be determined from data.length, but this is sufficient for now.

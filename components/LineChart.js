@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {createClassFromSpec} from './react-vega.js';
+import {createClassFromSpec} from 'react-vega';
 
 const Vis = createClassFromSpec('RawLineChart', {
   'width': 400,
