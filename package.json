@@ -4,7 +4,8 @@
   "description": "Linked Highlighting with React, Redux, Vega, and Webpack",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack --config=webpack.build.config.js"
+    "build": "webpack --config=webpack.build.config.js",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "classnames": "^2.1.2",
@@ -23,6 +24,7 @@
     "browserify-versionify": "^1.0.6",
     "copy-webpack-plugin": "^0.2.0",
     "express": "^4.13.3",
+    "gh-pages": "^0.11.0",
     "jstransform": "^11.0.2",
     "react-addons-pure-render-mixin": "~15.0.1",
     "react-addons-test-utils": "~15.0.1",
