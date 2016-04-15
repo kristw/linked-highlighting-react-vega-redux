@@ -1,9 +1,12 @@
 # linked-highlighting-react-vega-redux
+
+> This example was forked and modified from @pbeshai to use **[react-vega](https://github.com/kristw/react-vega)** for creating React components from Vega spec. It has the same functionality with the original demo and an additional bar chart in the bottom.
+
 An example of doing linked highlighting between separate visualization components using [React](https://facebook.github.io/react/), [Vega](http://vega.github.io/), and [Redux](http://rackt.org/redux/). The original structure and code for the server comes from [Redux examples](https://github.com/rackt/redux/tree/master/examples/todomvc).
 
 A line chart and a radial heatmap are drawn, rendering the same set of data. When the user mouses over either chart, highlighting marks are drawn on both charts. See [linked-highlighting-react-d3-reflux](https://github.com/pbeshai/linked-highlighting-react-d3-reflux) for a similar example using React, [D3](http://d3js.org/), and [Reflux](https://github.com/reflux/refluxjs).
 
-**Demo**: http://pbeshai.github.io/linked-highlighting-react-vega-redux/
+**Demo**: http://kristw.github.io/linked-highlighting-react-vega-redux/
 
 <img src='img/chart.png' width='400' />
 
@@ -49,4 +52,4 @@ npm run build
 
 # Author
 Peter Beshai [@pbesh](http://twitter.com/pbesh)
-
+Krist Wongsuphasawat [@kristw](https://twitter.com/kristw)
