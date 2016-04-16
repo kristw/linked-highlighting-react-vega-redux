@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import {createClassFromSpec} from 'react-vega';
+// import {createClassFromSpec} from './react-vega.js';
 
 export default createClassFromSpec('BarChart', {
   "width": 400,
